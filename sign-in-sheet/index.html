@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Group Counseling Sign-In</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <p class="eyebrow">Offline Group Counseling</p>
+          <h1>Sign-In Sheet</h1>
+          <p class="subhead">
+            Enter your name and signature below. Submissions stay on this device
+            and are added to a local PDF.
+          </p>
+        </div>
+        <button id="downloadPdf" class="button button--ghost" disabled>
+          Download PDF
+        </button>
+      </header>
+
+      <section class="card">
+        <form id="signInForm" autocomplete="off">
+          <label class="field">
+            <span class="field__label">Full name</span>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Type your name"
+              required
+            />
+          </label>
+
+          <div class="signature">
+            <div class="signature__header">
+              <span class="field__label">Signature</span>
+              <button
+                class="button button--text"
+                type="button"
+                id="clearSignature"
+              >
+                Clear signature
+              </button>
+            </div>
+            <canvas id="signaturePad" width="640" height="200"></canvas>
+          </div>
+
+          <button class="button" type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section class="card info">
+        <h2>Privacy &amp; Offline Use</h2>
+        <ul>
+          <li>No network calls are made. Keep this app on an offline device.</li>
+          <li>
+            Data is stored only in this browser session unless you download the
+            PDF.
+          </li>
+          <li>Clear the browser session after exporting the PDF.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="vendor/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
